@@ -38,17 +38,18 @@ discarded when this transform is applied!
       <xsl:copy-of select="mods:subject[@authority][mods:geographic]"/>
       <xsl:copy-of select="mods:subject[@authority][mods:temporal]"/>
       <xsl:copy-of select="mods:subject[not(@authority)]"/>
-      <xsl:copy-of select="mods:relatedItem[not(@type='admin') and not(@displayLabel='Transcribe This Item')]"/>  <!-- Regular relations...excludes Private notes -->
+      <xsl:copy-of select="mods:relatedItem[not(@type='admin')]"/>  <!-- Regular relations...excludes Private notes -->
       <xsl:copy-of select="mods:typeOfResource"/>
       <xsl:copy-of select="mods:genre"/>
       <xsl:copy-of select="mods:physicalDescription[@displayLabel='Physical']"/>    <!-- Physical/original objects only -->
       <xsl:copy-of select="mods:physicalDescription[not(@displayLabel)]"/>          <!-- Digital objects only -->
       <xsl:copy-of select="mods:physicalDescription[@displayLabel!='Physical']"/>   <!-- We should have NONE of these -->
+      <xsl:copy-of select="mods:location"/>                                         <!-- Added July 2016 for CSV imports -->
       <xsl:copy-of select="mods:classification"/>
       <xsl:copy-of select="mods:language"/>
       <xsl:copy-of select="mods:identifier[@type='local']"/>
       <xsl:copy-of select="mods:identifier[not(@type='local')]"/>
-      <xsl:copy-of select="mods:relatedItem[@displayLabel='Transcribe This Item']"/>  <!-- Old transcription scheme --> 
+<!--      <xsl:copy-of select="mods:relatedItem[@displayLabel='Transcribe This Item']"/>  Old transcription scheme --> 
       <xsl:copy-of select="mods:relatedItem[@type='admin']"/>                         <!-- Catch-all for PRIVATE notes -->
       <xsl:copy-of select="mods:extension"/>     
       <xsl:copy-of select="mods:accessCondition"/>
